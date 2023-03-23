@@ -15,6 +15,14 @@
             <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
             <link href="/css/style.css" rel="stylesheet" />
         </head>
+        <style>
+            .center {
+                display: flex;
+                justify-content: center;
+
+
+            }
+        </style>
 
         <body>
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
