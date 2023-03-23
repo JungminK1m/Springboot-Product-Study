@@ -2,7 +2,7 @@
     <%@ include file="layout/header.jsp" %>
 
         <div class="container">
-            <table class="table table-striped">
+            <table class="table table-striped mt-4">
                 <thead>
                     <tr>
                         <th>상품 번호</th>
@@ -15,7 +15,7 @@
                     <c:forEach items="${productList}" var="product">
                         <tr>
                             <td>${product.id}</td>
-                            <td><a href="#">${product.name}</a></td>
+                            <td><a href="/product/${product.id}">${product.name}</a></td>
                             <td>${product.price}원</td>
                             <td>${product.qty}개</td>
                         </tr>

@@ -9,7 +9,7 @@ public interface ProductRepository {
 
     public List<Product> findAll();
 
-    public Product findById(int id);
+    public Product findById(Integer id);
 
     public int insert(Product product);
 
