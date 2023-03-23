@@ -27,7 +27,7 @@
         <body>
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="/boards">Product</a>
+                    <h3 style="color: white;">Product</h3>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapsibleNavbar">
                         <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@
                                 <a class="nav-link" href="/productSave">상품등록페이지</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="productList">상품목록페이지</a>
+                                <a class="nav-link" href="product">상품목록페이지</a>
                             </li>
 
                             <li class="nav-item">

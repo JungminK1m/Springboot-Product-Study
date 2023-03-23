@@ -11,7 +11,7 @@ public class Product {
 
     private Integer id;
     private String name;
-    private String price;
+    private Integer price;
     private Integer qty;
     private Timestamp createdAt;
 

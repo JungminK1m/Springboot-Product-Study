@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import shop.mtcoding.productapp.model.Product;
 import shop.mtcoding.productapp.model.ProductRepository;
@@ -38,6 +39,22 @@ public class ProductController {
     @GetMapping("/productSave")
     public String productSave() {
         return "productSave";
+    }
+
+    @PostMapping("/product/save")
+    public String save(String name, Integer price, Integer qty) {
+
+        Product product = new Product();
+        product.setName(name);
+        product.setPrice(price);
+        product.setQty(qty);
+
+        int result = productRepository.insert(product);
+        if (result != 1) {
+            System.out.println("상품 등록 실패");
+        }
+
+        return "redirect:/product";
     }
 
     @GetMapping("/product/{id}/update")
