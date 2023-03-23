@@ -12,14 +12,14 @@
                     </tr>
                 </thead>
                 <tbody>
-
-                    <tr>
-                        <td>1</td>
-                        <td><a href="#">바나나</a></td>
-                        <td>3000원</td>
-                        <td>2개</td>
-                    </tr>
-
+                    <c:forEach items="${productList}" var="product">
+                        <tr>
+                            <td>${product.id}</td>
+                            <td><a href="#">${product.name}</a></td>
+                            <td>${product.price}원</td>
+                            <td>${product.qty}개</td>
+                        </tr>
+                    </c:forEach>
                 </tbody>
             </table>
         </div>
