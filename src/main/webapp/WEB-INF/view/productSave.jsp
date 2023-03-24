@@ -4,6 +4,9 @@
             <form action="/product/save" method="post">
                 <div class="mb-3 mt-3">
                     상품명 : <input id="name" name="name" type="text" placeholder="상품명을 적어주세요">
+                    <button id="CheckproductName" type="button">중복확인</button>
+                    <div id="Checkresult"></div>
+
                 </div>
                 <div class="mb-3 mt-3">
                     상품가격 : <input id="price" name="price" type="text" placeholder="상품 가격을 적어주세요">
@@ -15,4 +18,21 @@
 
             </form>
         </div>
+
+        <script>
+            $('#CheckproductName').on('click', function () {
+                $.ajax({
+                    url: '/productSave/checkName/',
+                    type: 'post',
+                    data: { name: $('input[name=name]').val() },
+
+                }).done((res) => {
+                    console.log(res);
+
+                }).fail((err) => {
+                    alert("이미 등록한 상품입니다")
+                    console.log(err);
+                });
+            });
+        </script>
         <%@ include file="layout/footer.jsp" %>

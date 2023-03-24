@@ -22,6 +22,9 @@ public interface ProductRepository {
     // Product 객체로 받는 방법
     public int update(Product product);
 
+    // ajax 중복체크를 위한 메서드
+    public Product findByName(String name);
+
     public int deleteById(Integer id);
 
 }

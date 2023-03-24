@@ -12,6 +12,10 @@
         select * from product where id = #{id}
     </select>
 
+    <select id = "findByName" resultType = "shop.mtcoding.productapp.model.Product">
+        select name from product where name = #{name}
+    </select>
+
     <insert id = "insert">
         insert into product (name, price, qty, created_at) values (#{name}, #{price}, #{qty}, now())
     </insert>
