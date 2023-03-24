@@ -126,4 +126,13 @@ public class ProductController {
         System.out.println("업데이트 완료");
         return "redirect:/product/" + id;
     }
+
+    @PostMapping("/product/{id}/delete")
+    public String delete(@PathVariable Integer id) {
+        int result = productRepository.deleteById(id);
+        if (result != 1) {
+            System.out.println("삭제 실패");
+        }
+        return "redirect:/product";
+    }
 }
