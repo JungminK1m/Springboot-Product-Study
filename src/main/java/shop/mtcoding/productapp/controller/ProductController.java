@@ -57,13 +57,73 @@ public class ProductController {
         return "redirect:/product";
     }
 
-    @GetMapping("/product/{id}/update")
-    public String productUpdate() {
+    @GetMapping("/product/{id}/updateForm")
+    public String productUpdate(@PathVariable Integer id, Model model) {
+
+        // Product product = productRepository.findById(id);
+        // model.addAttribute("product", product);
+        Product product = productRepository.findById(id);
+        model.addAttribute("product", product);
+
         return "productUpdate";
     }
 
-    @PostMapping("/product/{id}")
-    public String update(String name, Integer price, Integer qty) {
-        return "redirect:/productDetail";
+    // 첫 번째 방법, @Param으로 받기
+
+    // @PostMapping("/product/{id}/update")
+    // public String update(@PathVariable Integer id, String name, Integer price,
+    // Integer qty) {
+
+    // int result = productRepository.update(id, name, price, qty);
+
+    // System.out.println("result : " + result);
+
+    // if (result != 1) {
+    // System.out.println("업데이트 실패");
+    // return "redirect:/product/" + id + "/updateForm";
+    // }
+    // System.out.println("업데이트 완료");
+    // return "redirect:/product/" + id;
+    // }
+
+    // 실험중 - Product 객체로 업데이트 하는 방법
+    // 두 번째 방법
+
+    @PostMapping("/product/{id}/update")
+    public String update(@PathVariable Integer id, Model model, String name, Integer price,
+            Integer qty) {
+
+        Product p = productRepository.findById(id);
+        model.addAttribute("product", p);
+
+        // 테스트
+        System.out.println("p 아이디: " + p.getId());
+        System.out.println("p 이름: " + p.getName());
+        System.out.println("p 가격: " + p.getPrice());
+        System.out.println("p 재고: " + p.getQty());
+
+        // Product product = new Product();
+        p.setName(name);
+        p.setPrice(price);
+        p.setQty(qty);
+        System.out.println("데이터 담음");
+
+        // 업데이트
+        int result = productRepository.update(p);
+
+        // 테스트
+        System.out.println("product 아이디: " + p.getId());
+        System.out.println("product 이름: " + p.getName());
+        System.out.println("product 가격: " + p.getPrice());
+        System.out.println("product 재고: " + p.getQty());
+
+        System.out.println("result : " + result);
+
+        if (result != 1) {
+            System.out.println("업데이트 실패");
+            return "redirect:/product/" + id + "/updateForm";
+        }
+        System.out.println("업데이트 완료");
+        return "redirect:/product/" + id;
     }
 }

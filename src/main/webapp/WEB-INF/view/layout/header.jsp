@@ -38,17 +38,7 @@
                                 <a class="nav-link" href="/productSave">상품등록페이지</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="product">상품목록페이지</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="productDetail">상품상세보기페이지</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="productDelete">상품삭제페이지</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="productUpdate">상품수정페이지</a>
+                                <a class="nav-link" href="/product">상품목록페이지</a>
                             </li>
                         </ul>
                     </div>

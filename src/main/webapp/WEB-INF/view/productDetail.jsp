@@ -18,10 +18,14 @@
                     </tr>
                 </table>
                 <div class="center" style="margin-top: 20px; text-align: center;">
-                    <button type="button"
-                        style="width: 240px; height: 50px; margin: auto; background-color: rgb(255, 210, 199);">수정하기</button>
-                    <button type="button"
-                        style="width: 240px; height: 50px; margin: auto; background-color: rgb(250, 255, 182);">삭제하기</button>
+                    <form type="submit" action="/product/${product.id}/updateForm" method="get">
+                        <button
+                            style="width: 240px; height: 50px; margin-right: 20px; background-color: rgb(255, 210, 199);">수정하기</button>
+                    </form>
+                    <form type="submit" action="/product/${product.id}/delete" method="post">
+                        <button
+                            style="width: 240px; height: 50px; margin: auto; background-color: rgb(250, 255, 182);">삭제하기</button>
+                    </form>
                 </div>
             </div>
         </div>
