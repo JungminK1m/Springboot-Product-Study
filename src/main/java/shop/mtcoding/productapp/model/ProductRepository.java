@@ -13,8 +13,8 @@ public interface ProductRepository {
 
     public int insert(Product product);
 
-    public int updateById(int id);
+    public int update(Product product);
 
-    public int deleteById(int id);
+    public int deleteById(Integer id);
 
 }

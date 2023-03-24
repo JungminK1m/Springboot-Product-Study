@@ -16,7 +16,7 @@
         insert into product (name, price, qty, created_at) values (#{name}, #{price}, #{qty}, now())
     </insert>
 
-    <update id = "updateById">
+    <update id = "update">
         update product set name = #{name}, price = #{price}, qty = #{qty} where id = #{id}
     </update>
 
