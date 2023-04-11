@@ -55,6 +55,7 @@
             // => false가 됐으니 상품명을 다른 걸로 바뀌면 꼭 중복체크를 다시 해야되게 만든다.
             $('#name').on('input', function (e) {
                 sameCheck = false;
+                console.log(sameCheck);
             });
         
             // 동일 상품명 등록하지 못하게 처리하는 이벤트 (최종 상품 등록 버튼)
@@ -66,8 +67,10 @@
                     // e.preventDefault(); = 브라우저가 이벤트를 처리하는 동작을 중단시키는 메서드
                     // submit 이벤트를 중단시키기 위해 사용됨
                      e.preventDefault();
+                     console.log(sameCheck);
                 }else if (sameCheck == true) {
                     alert("상품이 등록되었습니다.");
+                    console.log(sameCheck);
                 }
             });
         </script>
